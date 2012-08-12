@@ -1,61 +1,63 @@
 <!--
-  pastemon.pl main configuration file sample
-  Note: Features can be disabled by commenting them using standard comment tags.
+pastemon.pl main configuration file sample
+Note: Features can be disabled by commenting them using standard comment tags.
 //-->
 <pastemon>
-        <!-- Core features //-->
-        <core>
-                <ignore-case>yes</ignore-case>
-                <pid-file>/var/run/pastemon.pid</pid-file>
-                <regex-file>regex.conf</regex-file>
-                <sample-size>256</sample-size>
-                <proxy-config>proxies.conf</proxy-config>
-                <dump-directory>/home/pastemon/dump/%Y/%M/%D</dump-directory>
-                <dump-all>yes</dump-all>
-		<compress-pasties>yes</compress-pasties>
-		<http-timeout>15</http-timeout>
-		<!-- Use Jaro-Winkler distance algorithm //-->
-		<distance-min>0.95</distance-min>
-		<distance-max-size>10240</distance-max-size>
-        </core>
+  <!-- Core features //-->
+  <core>
+    <pid-file>/var/run/pastemon.pid</pid-file>
+    <regex-file>/etc/pastemon/regex.conf</regex-file>
+    <proxy-config>/etc/pastemon/proxies.conf</proxy-config>
+    <ua-config>/etc/pastemon/user_agents.conf</ua-config>
+    <dump-directory>/var/lib/pastemon/dump/%Y/%M/%D</dump-directory>
+    <dump-all>yes</dump-all>
+    <compress-pasties>yes</compress-pasties>
+    <sample-size>256</sample-size>
+    <http-timeout>15</http-timeout>
+    <ignore-case>yes</ignore-case>
 
-        <!-- Websites to monitor //-->
-        <websites>
-                <pastebin>yes</pastebin>
-                <pastie>yes</pastie>
-        </websites>
+    <!-- Use Jaro-Winkler distance algorithm //-->
+    <distance-min>0.95</distance-min>
+    <distance-max-size>10240</distance-max-size>
+  </core>
 
-        <!-- Follow URLs //-->
-        <urls>
-                <follow>yes</follow>
-                <matching>(anonpaste|pastebin\.com|pastie\.org|pastehtml\.com|pastebay\.net|pastee\.org)</matching>
-        </urls>
+  <!-- Websites to monitor //-->
+  <websites>
+    <pastebin>yes</pastebin>
+    <pastie>yes</pastie>
+  </websites>
 
-        <!-- CEF Output (ArcSight) //-->
-        <cef-output>
-                <destination>10.0.0.1</destination>
-                <port>514</port>
-                <severity>3</severity>
-        </cef-output>
+  <!-- Follow URLs //-->
+  <urls>
+    <follow>yes</follow>
+    <matching>(anonpaste|pastebin\.com|pastie\.org|pastehtml\.com|pastebay\.net|pastee\.org)</matching>
+  </urls>
 
-        <!-- Syslog Output //-->
-        <syslog-output>
-                <facility>daemon</facility>
-        </syslog-output>
+  <!-- CEF Output (ArcSight) //-->
+  <cef-output>
+    <destination>10.0.0.1</destination>
+    <port>514</port>
+    <severity>3</severity>
+  </cef-output>
 
-        <!-- Email Output //-->
-        <smtp-output>
-                <smtp-server>127.0.0.1</smtp-server>
-                <from>pastemon@rootshell.be</from>
-                <recipient>recipient@domain.com</recipient>
-                <subject>PasteMon Alert</subject>
-        </smtp-output>
+  <!-- Syslog Output //-->
+  <syslog-output>
+    <facility>daemon</facility>
+  </syslog-output>
 
-        <!-- Wordpress Output (XMLRPC) //-->
-        <wordpress-output>
-                <site>www.myblog.com</site>
-                <user>editor</user>
-                <password>averystrongpassword</password>
-                <category>favorite</category>
-        </wordpress-output>
+  <!-- Email Output //-->
+  <smtp-output>
+    <smtp-server>127.0.0.1</smtp-server>
+    <from>pastemon@rootshell.be</from>
+    <recipient>recipient@domain.com</recipient>
+    <subject>[PasteMon] Suspicious data found</subject>
+  </smtp-output>
+
+  <!-- Wordpress Output (XMLRPC) //-->
+  <wordpress-output>
+    <site>www.myblog.com</site>
+    <user>editor</user>
+    <password>averystrongpassword</password>
+    <category>favorite</category>
+  </wordpress-output>
 </pastemon>
