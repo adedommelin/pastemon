@@ -1,0 +1,20 @@
+This work was packaged for Debian by:
+    Alexandre De Dommelin <adedommelin@tuxz.net> on Sun, 12 Aug 2012 17:05:13 +0000 
+
+It was downloaded from:
+    https://github.com/adedommelin/pastemon 
+
+Upstream Author(s):
+    Xavier Mertens <xme@rootsheel.be>
+    Alexandre De Dommelin <adedommelin@tuxz.net> 
+
+Copyright:
+
+License:
+    BSD 
+
+The Debian packaging is:
+    Copyright (C) 2012 Alexandre De Dommelin <adedommelin@tuxz.net>
+
+and is licensed under the GPL version 3,
+see "/usr/share/common-licenses/GPL-3".

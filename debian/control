@@ -1,0 +1,18 @@
+Source: pastemon
+Section: admin
+Priority: extra
+Maintainer: Alexandre De Dommelin <adedommelin@tuxz.net>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: https://github.com/adedommelin/pastemon/
+Vcs-Git: git://github.com/adedommelin/pastemon.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/pastemon.git;a=summary
+
+Package: pastemon
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Description: Pastebin monitoring for interesting content 
+ This package provides pastemon, a daemon to monitor pastebin.com for
+ interesting content using regular expression.
+ It can send you mail alerts, generate CFE events, post finding to a wordpress
+ instance using the XML-RPC API. 
