@@ -1,0 +1,4 @@
+etc/proxies.conf etc/pastemon
+etc/pastemon.conf etc/pastemon
+etc/user_agents.conf etc/pastemon
+etc/regex.conf etc/pastemon
