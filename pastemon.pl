@@ -54,7 +54,6 @@ use XML::XPath;
 use XML::XPath::XMLParser;
 use Net::SMTP;
 use POSIX qw(setsid);
-use Data::Dumper;
 
 # Optional modules
 my $haveWordPressXMLRMC = eval "use WordPress::XMLRPC; 1";
@@ -147,8 +146,8 @@ if (-r $pidFile) {
   die "$program already running (PID $currentpid)";
 }
 
-loadRegexFromFile($regexFile) || die "Cannot load regex from file $regexFile";
-loadUserAgentFromFile($uaFile) || die "Cannot load user-agent from file $regexFile";
+loadRegexFromFile($regexFile); 
+loadUserAgentFromFile($uaFile);
 
 if (!$debug) {
   my $pid = fork;
